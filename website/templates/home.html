@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block title %}Home Upload{% endblock %} {% block
+content %}
+<h1 id="title" align="center">Upload File</h1>
+<div class="card">
+  <div class="card-body row">
+    <div class="col-sm-10" id="up">
+      <form method="post" action="" enctype="multipart/form-data">
+        <div id="upload">
+          <input
+            class="form-control form-control-lg"
+            
+            name="upload"
+            id="formFileLg"
+            type="file"
+          />
+          <label id="lb" for="formFileLg" class="form-label"
+            >or drop file DICOM here</label
+          >
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">
+                <button type="submit" onClick="test()" class="btn btn-primary">
+                  Diagnose
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" align="center">Download the result file</h5>
+          <a onClick="check()" id="url" target="_blank" >
+            <img src="static/dicom.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text" id="result-name" align="center">{{ namefile }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- <button onClick="test()" id="submit">asdasd</button> -->
+{% if status == True %}
+<div id="result" class="row">  
+  <h1  class="card-title title" id="title" align="center">Diagnose</h1>
+  <div class="padding">
+    <p class="result-text" align="center">{{ DIAGNOSE }}</p>
+  </div>
+  <div  class="card-body row">
+    <div class="col-sm-6">
+      <div class="card">
+        <br />
+          <p class="card-text result" align="center"><strong>Volumes</strong></p>
+          <img
+            src="{{ url_for('static', filename='upload/result.gif') }}"
+            alt=""
+          />
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <br />
+          <p class="card-text result" align="center"><strong>Segmentation</strong></p>
+          <img
+            src="{{ url_for('static', filename='upload/result_seg.gif') }}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+</script>
+{% endif %}
+
+{% endblock %}

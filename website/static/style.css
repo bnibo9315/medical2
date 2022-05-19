@@ -1,0 +1,46 @@
+#login-form,
+#title {
+  margin-top: 50px;
+}
+#lb {
+  margin-top: 20px;
+}
+#upload {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+#result {
+  margin-top: 50px;
+  padding-bottom:100px;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a, a:visited {
+    color: inherit;
+}
+a:hover{
+    color:#0d6efd;
+}
+#login-form label {
+    font-size:20px;
+}
+.padding{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.result-text{
+  color: rgb(245, 73, 73);
+  font-size:25px;
+  font-weight: 400;
+}
+/* #down{
+  display: none;
+} */
