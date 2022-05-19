@@ -1,0 +1,3 @@
+/website/static/upload/*
+__pycache__
+/website/__pycache__
